@@ -1,38 +1,45 @@
 \documentclass{book}
 
-% Required packages
+\usepackage[a4paper, top=2cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{titlesec}
 \usepackage{tikz}
 \usepackage{array}
 \usepackage{xcolor}
+\usepackage{etoolbox} % <--- Tambahan penting
 
-% Define colors
+% Patch chapter command biar nggak terlalu jauh dari atas
+\makeatletter
+\patchcmd{\@makechapterhead}
+  {\vspace*{50\p@}} % Ini default jarak 50pt dari atas
+  {\vspace*{10pt}}  % Ganti dengan lebih kecil
+  {}{}
+\makeatother
+
 \definecolor{deepred}{RGB}{153, 0, 0}
 
-% Custom chapter format with red box
 \titleformat{\chapter}[display]
-  {\normalfont\large\bfseries}
+  {\normalfont\Large\bfseries}
   {%
     \begin{tikzpicture}
-      \fill[deepred] (0,0) rectangle (2,-4);
-      \node[text=white, font=\small\bfseries, anchor=south] at (1,-0.5) {CHAPTER};
-      \node[text=white, font=\fontsize{40}{48}\selectfont\bfseries] at (1,-2) {\thechapter};
+      \fill[deepred] (0,0) rectangle (2,-2.8);
+      \node[text=white, font=\small\bfseries, anchor=base] at (1,-0.3) {CHAPTER};
+      \node[text=white, font=\fontsize{30}{36}\selectfont\bfseries] at (1,-1.5) {\thechapter};
     \end{tikzpicture}
   }
   {0.5em}
-  {\raggedright\MakeUppercase}
+  {\MakeUppercase}
   [
-    \vspace{0.5em}%
-    \normalsize\itshape\mdseries\raggedleft
+    \vspace{0.3em}%
+    \small\itshape\mdseries\raggedleft
     The true logic of this world is in the calculus of probabilities. \\
     \rule{\linewidth}{0.4pt} \\
     \textbf{--- James C. Maxwell}
   ]
 
-% Adjust spacing: 0pt left indent, -3em space before chapter, 2em after chapter title
-\titlespacing*{\chapter}{0pt}{-3em}{2em}
+% Spacing dari kiri = 0pt, atas = kecil, bawah = setelah heading
+\titlespacing*{\chapter}{0pt}{0pt}{2em}
 
-% Customize section and subsection headings
+% Section/subsection
 \titleformat{\section}
   {\normalfont\bfseries}
   {\thesection}
@@ -45,7 +52,6 @@
   {1em}
   {}
 
-% Define a new column type for the dotted leader
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
@@ -53,7 +59,7 @@
 
 \chapter{How to Use This Book}
 
-\vspace{-1em}
+\vspace{-0.5em}
 \noindent{\bfseries Contents}
 
 \vspace{0.5em}
