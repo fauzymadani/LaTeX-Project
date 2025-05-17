@@ -1,10 +1,28 @@
 % this is a test for latex Packages
-% Author: Fauzy madani <fauzy_madani@smknegeri1garut.sch.id>
-% This style and looks is inspired from a reddit post: 
+% Author: Fauzy Madani <fauzy_madani@smknegeri1garut.sch.id>
+% This style and looks is inspired from a reddit post:
 % https://www.reddit.com/r/LaTeX/comments/1klt7wd/help_latex_chapter_style/#lightbox
 \documentclass{book}
 
-% ======== Packages ========
+% ========== File contents untuk Zallman.sty ==========
+\usepackage{filecontents}
+\begin{filecontents*}{Zallman.sty}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{Zallman}[2007/11/24 v1.0 Zallman CFR]
+
+\input Zallman.fd
+
+\DeclareRobustCommand{\Zallmanfamily}{
+  \fontencoding{U}%
+  \fontseries{xl}%
+  \fontshape{n}%
+  \fontfamily{Zallman}%
+  \selectfont}
+\DeclareTextFontCommand{\zall}{\Zallmanfamily}
+\endinput
+\end{filecontents*}
+
+% ========== Packages ==========
 \usepackage[a4paper, top=2cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{titlesec}
 \usepackage{tikz}
@@ -15,7 +33,12 @@
 \usepackage{lipsum} % dummy text
 \usepackage{lettrine} % for drop cap
 
-% ======== Chapter spacing tweak ========
+% ========== Load Zallman ==========
+\usepackage{Zallman}
+\definecolor{Maroon}{rgb}{0.5, 0, 0}
+\renewcommand{\LettrineFontHook}{\color{Maroon}\Zallmanfamily}
+
+% ========== Chapter spacing tweak ==========
 \makeatletter
 \patchcmd{\@makechapterhead}
   {\vspace*{50\p@}}
@@ -23,10 +46,10 @@
   {}{}
 \makeatother
 
-% ======== Colors ========
+% ========== Colors ==========
 \definecolor{deepred}{RGB}{153, 0, 0}
 
-% ======== Chapter style ========
+% ========== Chapter style ==========
 \titleformat{\chapter}[display]
   {\normalfont\Large\bfseries}
   {%
@@ -48,7 +71,7 @@
 
 \titlespacing*{\chapter}{0pt}{0pt}{2em}
 
-% ======== Section & Subsection style ========
+% ========== Section & Subsection style ==========
 \titleformat{\section}
   {\normalfont\bfseries}
   {\thesection}
@@ -61,11 +84,11 @@
   {1em}
   {}
 
-% ======== Column types ========
+% ========== Column types ==========
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
-% ======== Document starts ========
+% ========== Document starts ==========
 \begin{document}
 
 % === Table of Contents ===
@@ -104,10 +127,10 @@
 \chapter{Interview Questions}
 
 \section{Theory}
-\lettrine{T}{ his}section covers theoretical concepts. \lipsum[7]
+\lettrine{T}{ his} section covers theoretical concepts. \lipsum[7]
 
 \section{Coding}
-\lettrine{I}{  nterviewers} often ask you to write code. \lipsum[8]
+\lettrine{I}{ nterviewers} often ask you to write code. \lipsum[8]
 
 \end{document}
 

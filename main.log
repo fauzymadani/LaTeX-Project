@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex 2025.4.18)  17 MAY 2025 18:34
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022/Debian) (preloaded format=xelatex 2025.4.18)  17 MAY 2025 18:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -24,6 +24,20 @@ File: bk10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
 )
+(/usr/share/texlive/texmf-dist/tex/latex/filecontents/filecontents.sty
+Package: filecontents 2019/09/20 v1.5 Create an external file from within a LaT
+eX document
+
+
+Package filecontents Warning: This package is obsolete. Disabling it and
+(filecontents)                passing control to the filecontents environment
+(filecontents)                defined by the LaTeX kernel.
+
+)
+
+LaTeX Info: File `Zallman.sty' already exists on the system.
+            Not generating it from this source.
+
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
@@ -593,35 +607,41 @@ Loading lettrine.cfg
 \LettrineHeight=\dimen285
 \LettrineDepth=\dimen286
 \Llist@everypar=\toks34
-) (./main.aux)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cfr-initials/Zallman.sty
+Package: Zallman 2007/11/24 v1.01 Zallman CFR
+
+(/usr/share/texlive/texmf-dist/tex/latex/initials/Zallman.fd
+File: Zallman.fd 2003/04/02 Font definition file for U/Zallman
+)) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 6
-5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 92.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 9
+2.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2022/07/10 v2.5l Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 92.
+LaTeX Font Info:    ... okay on input line 92.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -657,7 +677,7 @@ LaTeX Font Info:    ... okay on input line 65.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 65.
+Package hyperref Info: Link coloring OFF on input line 92.
 (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -681,58 +701,58 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 Chapter 1.
 Package lettrine.sty Info: Targeted height = 17.14pt
 (lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 17.08978pt (F);
-(lettrine.sty)             reported on input line 75.
+(lettrine.sty)             Lettrine height = 17.11778pt (F);
+(lettrine.sty)             reported on input line 102.
 Package lettrine.sty Info: Targeted height = 17.14pt
 (lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 17.13997pt (D);
-(lettrine.sty)             reported on input line 78.
+(lettrine.sty)             Lettrine height = 17.14006pt (D);
+(lettrine.sty)             reported on input line 105.
 [3] [4
 
 ]
 Chapter 2.
 Package lettrine.sty Info: Targeted height = 17.14pt
 (lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 17.74225pt (A);
-(lettrine.sty)             reported on input line 84.
+(lettrine.sty)             Lettrine height = 17.11778pt (A);
+(lettrine.sty)             reported on input line 111.
 Package lettrine.sty Info: Targeted height = 17.14pt
 (lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 17.06468pt (T);
-(lettrine.sty)             reported on input line 87.
+(lettrine.sty)             Lettrine height = 17.14006pt (T);
+(lettrine.sty)             reported on input line 114.
 Package lettrine.sty Info: Targeted height = 17.14pt
 (lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 17.13997pt (B);
-(lettrine.sty)             reported on input line 91.
+(lettrine.sty)             Lettrine height = 17.11778pt (B);
+(lettrine.sty)             reported on input line 118.
 [5] [6
 
 ]
 Chapter 3.
 Package lettrine.sty Info: Targeted height = 17.14pt
 (lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 17.54149pt (G);
-(lettrine.sty)             reported on input line 97.
+(lettrine.sty)             Lettrine height = 17.09552pt (G);
+(lettrine.sty)             reported on input line 124.
 [7] [8
 
 ]
 Chapter 4.
 Package lettrine.sty Info: Targeted height = 17.14pt
 (lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 17.06468pt (T);
-(lettrine.sty)             reported on input line 103.
+(lettrine.sty)             Lettrine height = 17.14006pt (T);
+(lettrine.sty)             reported on input line 130.
 Package lettrine.sty Info: Targeted height = 17.14pt
 (lettrine.sty)             (for loversize=0, accent excluded),
-(lettrine.sty)             Lettrine height = 17.13997pt (I);
-(lettrine.sty)             reported on input line 106.
+(lettrine.sty)             Lettrine height = 17.16231pt (I);
+(lettrine.sty)             reported on input line 133.
 [9] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: DFC4ECDDC3391C6C27F55E80CA808E7B;1821.
  ) 
 Here is how much of TeX's memory you used:
- 20700 strings out of 476775
- 391174 string characters out of 5808212
+ 20757 strings out of 476775
+ 392891 string characters out of 5808212
  1853991 words of memory out of 5000000
- 40511 multiletter control sequences out of 15000+600000
- 512743 words of font info for 45 fonts, out of 8000000 for 9000
+ 40561 multiletter control sequences out of 15000+600000
+ 513123 words of font info for 46 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  100i,5n,104p,412b,620s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
