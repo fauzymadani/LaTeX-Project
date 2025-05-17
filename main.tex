@@ -1,0 +1,81 @@
+\documentclass{book}
+
+% Required packages
+\usepackage{titlesec}
+\usepackage{tikz}
+\usepackage{array}
+\usepackage{xcolor}
+
+% Define colors
+\definecolor{deepred}{RGB}{153, 0, 0}
+
+% Custom chapter format with red box
+\titleformat{\chapter}[display]
+  {\normalfont\large\bfseries}
+  {%
+    \begin{tikzpicture}
+      \fill[deepred] (0,0) rectangle (2,-4);
+      \node[text=white, font=\small\bfseries, anchor=south] at (1,-0.5) {CHAPTER};
+      \node[text=white, font=\fontsize{40}{48}\selectfont\bfseries] at (1,-2) {\thechapter};
+    \end{tikzpicture}
+  }
+  {0.5em}
+  {\raggedright\MakeUppercase}
+  [
+    \vspace{0.5em}%
+    \normalsize\itshape\mdseries\raggedleft
+    The true logic of this world is in the calculus of probabilities. \\
+    \rule{\linewidth}{0.4pt} \\
+    \textbf{--- James C. Maxwell}
+  ]
+
+% Adjust spacing: 0pt left indent, -3em space before chapter, 2em after chapter title
+\titlespacing*{\chapter}{0pt}{-3em}{2em}
+
+% Customize section and subsection headings
+\titleformat{\section}
+  {\normalfont\bfseries}
+  {\thesection}
+  {1em}
+  {}
+
+\titleformat{\subsection}
+  {\normalfont\bfseries}
+  {\thesubsection}
+  {1em}
+  {}
+
+% Define a new column type for the dotted leader
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+\begin{document}
+
+\chapter{How to Use This Book}
+
+\vspace{-1em}
+\noindent{\bfseries Contents}
+
+\vspace{0.5em}
+\noindent\begin{tabular}{@{}L{0.9\textwidth}@{\dotfill}R{0.05\textwidth}@{}}
+Introduction & 3 \\
+What makes this book so valuable & 3 \\
+What will I learn & 4 \\
+\hspace{0.5cm}Starting Your Career & 4 \\
+\hspace{0.5cm}Advancing Your Career & 5 \\
+\hspace{0.5cm}Diving Into Deep Learning & 5 \\
+How to Work Problems & 6 \\
+Types of Problems & 7 \\
+\end{tabular}
+
+\vspace{1em}
+\section{Introduction}
+First of all, welcome to world of Deep Learning Interviews.
+
+\subsection{What makes this book so valuable}
+ABCDEF advertising. Deciphering dead languages. Detecting malignant tumours. Predicting natural disasters. Every year we see dozens of new uses for deep learning emerge from corporate R\&D, academia, and plucky entrepreneurs. Increasingly, deep learning and artificial intelligence are ingrained in our cultural consciousness. Leading universities are dedicating programs to teaching the technology.
+
+That means jobs. It means intense demand and intense competition. It means a generation of data scientists and machine learning engineers making their way into the workforce and starting careers.
+
+\end{document}
+
