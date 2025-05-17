@@ -1,22 +1,32 @@
+% this is a test for latex Packages
+% Author: Fauzy madani <fauzy_madani@smknegeri1garut.sch.id>
+% This style and looks is inspired from a reddit post: 
+% https://www.reddit.com/r/LaTeX/comments/1klt7wd/help_latex_chapter_style/#lightbox
 \documentclass{book}
 
+% ======== Packages ========
 \usepackage[a4paper, top=2cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{titlesec}
 \usepackage{tikz}
 \usepackage{array}
 \usepackage{xcolor}
-\usepackage{etoolbox} % <--- Tambahan penting
+\usepackage{etoolbox}
+\usepackage[hidelinks]{hyperref} % hyperlink for TOC
+\usepackage{lipsum} % dummy text
+\usepackage{lettrine} % for drop cap
 
-% Patch chapter command biar nggak terlalu jauh dari atas
+% ======== Chapter spacing tweak ========
 \makeatletter
 \patchcmd{\@makechapterhead}
-  {\vspace*{50\p@}} % Ini default jarak 50pt dari atas
-  {\vspace*{10pt}}  % Ganti dengan lebih kecil
+  {\vspace*{50\p@}}
+  {\vspace*{10pt}}
   {}{}
 \makeatother
 
+% ======== Colors ========
 \definecolor{deepred}{RGB}{153, 0, 0}
 
+% ======== Chapter style ========
 \titleformat{\chapter}[display]
   {\normalfont\Large\bfseries}
   {%
@@ -31,15 +41,14 @@
   [
     \vspace{0.3em}%
     \small\itshape\mdseries\raggedleft
-    The true logic of this world is in the calculus of probabilities. \\
+    "The true logic of this world is in the calculus of probabilities." \\
     \rule{\linewidth}{0.4pt} \\
     \textbf{--- James C. Maxwell}
   ]
 
-% Spacing dari kiri = 0pt, atas = kecil, bawah = setelah heading
 \titlespacing*{\chapter}{0pt}{0pt}{2em}
 
-% Section/subsection
+% ======== Section & Subsection style ========
 \titleformat{\section}
   {\normalfont\bfseries}
   {\thesection}
@@ -52,36 +61,53 @@
   {1em}
   {}
 
+% ======== Column types ========
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
+% ======== Document starts ========
 \begin{document}
 
+% === Table of Contents ===
+\tableofcontents
+\clearpage
+
+% === CHAPTER 1 ===
 \chapter{How to Use This Book}
 
-\vspace{-0.5em}
-\noindent{\bfseries Contents}
-
-\vspace{0.5em}
-\noindent\begin{tabular}{@{}L{0.9\textwidth}@{\dotfill}R{0.05\textwidth}@{}}
-Introduction & 3 \\
-What makes this book so valuable & 3 \\
-What will I learn & 4 \\
-\hspace{0.5cm}Starting Your Career & 4 \\
-\hspace{0.5cm}Advancing Your Career & 5 \\
-\hspace{0.5cm}Diving Into Deep Learning & 5 \\
-How to Work Problems & 6 \\
-Types of Problems & 7 \\
-\end{tabular}
-
-\vspace{1em}
 \section{Introduction}
-First of all, welcome to world of Deep Learning Interviews.
+\lettrine{F}{ irst of all}, welcome to the world of Deep Learning Interviews. \lipsum[1]
 
 \subsection{What makes this book so valuable}
-ABCDEF advertising. Deciphering dead languages. Detecting malignant tumours. Predicting natural disasters. Every year we see dozens of new uses for deep learning emerge from corporate R\&D, academia, and plucky entrepreneurs. Increasingly, deep learning and artificial intelligence are ingrained in our cultural consciousness. Leading universities are dedicating programs to teaching the technology.
+\lettrine{D}{ eciphering} dead languages. Detecting malignant tumours. Predicting natural disasters. \lipsum[2]
 
-That means jobs. It means intense demand and intense competition. It means a generation of data scientists and machine learning engineers making their way into the workforce and starting careers.
+% === CHAPTER 2 ===
+\chapter{Deep Learning Basics}
+
+\section{What is a Neural Network?}
+\lettrine{A}{ rtificial} neurons are the building blocks. \lipsum[3]
+
+\subsection{Perceptron}
+\lettrine{T}{ he} perceptron is a binary classifier. \lipsum[4]
+
+\section{Training Deep Networks}
+\subsection{Backpropagation}
+\lettrine{B}{ ackpropagation} is an essential technique. \lipsum[5]
+
+% === CHAPTER 3 ===
+\chapter{Advanced Topics}
+
+\section{GANs and VAEs}
+\lettrine{G}{ enerative} models like GANs are powerful. \lipsum[6]
+
+% === CHAPTER 4 ===
+\chapter{Interview Questions}
+
+\section{Theory}
+\lettrine{T}{ his}section covers theoretical concepts. \lipsum[7]
+
+\section{Coding}
+\lettrine{I}{  nterviewers} often ask you to write code. \lipsum[8]
 
 \end{document}
 
