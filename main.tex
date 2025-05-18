@@ -117,26 +117,69 @@
 \clearpage
 
 % === Author Page ===
-\thispagestyle{empty}
-\vspace*{5cm}
+\chapter*{About the Author}
+\addcontentsline{toc}{chapter}{About the Author}
+
+\vspace{2em}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
 \begin{center}
-  {\Huge\bfseries About the Author}
-
-  \vspace{1cm}
-  \lettrine[lines=3]{F}{auzy Madani} is not just a student of technology, but a contemplator of knowledge. He believes that understanding machines helps us understand ourselves — and that clarity is the highest form of empathy.
-
-  \vspace{0.5cm}
-  As a passionate software developer, his fascination lies in the overlap between artificial intelligence and human intuition, where logic meets mystery.
-
-  \vspace{1cm}
-  \begin{tikzpicture}
-    \draw[deepred, thick, fill=deepred!10, rounded corners=10pt]
-      (0,0) rectangle (10,3);
-    \node[text=deepred!90!black, font=\large\ttfamily] at (5,1.5) {“To understand the machine is to reflect on the self.”};
-  \end{tikzpicture}
+  \textsc{\LARGE SMKN 1 Garut}\\[1.5cm] % Institution / school
+  
+  \textsc{\Large Cloud Computing and Web Development Enthusiast}\\[0.5cm] % Major heading
+  
+  \textsc{\large About the Author}\\[0.5cm] % Minor heading (optional)
+  
+  \HRule\\[0.4cm]
+  
+  {\huge\bfseries Fauzy Madani}\\[0.4cm] % Large name
+  
+  \HRule\\[1.5cm]
 \end{center}
+
+\noindent
+\begin{minipage}{0.48\textwidth}
+  \large
+  \textit{Contact}\\
+  \texttt{github.com/fauzymadani} \\
+  \texttt{fauzy@example.com}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+  \large
+  \textit{Areas of Interest}\\
+  \begin{itemize}
+    \setlength\itemsep{0.6em}
+    \item Linux and Open Source Systems
+    \item Cloud Infrastructure (AWS, Debian-based servers)
+    \item Programming (Python, Bash, PHP)
+    \item Machine Learning and Data Science
+    \item Internet Privacy and Cryptography
+  \end{itemize}
+\end{minipage}
+
+\vfill
+
+\begin{center}
+  {\large \today} % date, you can replace with fixed date if you want
+\end{center}
+
+\vspace{2em}
+
+\noindent Fauzy Madani is a student at SMKN 1 Garut, passionate about cloud computing and web development. He actively explores open-source systems, Linux server administration, and secure web development.
+
+His interests also include the intersection of machine learning and human cognition, with experiments in neural networks and data visualization. Fauzy shares his projects on GitHub and participates in various technology competitions, including Cloud Computing contests (LKS).
+
+His long-term goal is to become a Debian package maintainer and contribute to reliable, privacy-focused software for the global community.
+
 \clearpage
 
+% === Continue with Table of Contents and next chapter ===
+\tableofcontents
+\clearpage
+
+\chapter{How to Use This Book}
 % === Table of Contents ===
 \tableofcontents
 \clearpage
@@ -158,16 +201,16 @@
 \end{center}
 
 \section{Introduction}
-\lettrine{F}{irst of all}, involves carefully examining ideas beyond their surface level by systematically analyzing relationships, causes, and implications. It requires going beyond just accepting information as it is, instead questioning assumptions and exploring multiple layers of reasoning to understand the underlying principles. This kind of thinking uses formal logical processes like deduction and induction to draw well-founded conclusions and often involves breaking down complex problems into smaller, more manageable parts to analyze them thoroughly. From a technological standpoint, deep thinking means understanding how different parts of a system interact and affect each other, rather than looking at components in isolation. It involves creating solutions that are efficient, scalable, and robust by anticipating potential problems and edge cases. Technological deep thinking also requires a mindset of careful design — building abstractions and modular structures that manage complexity while maintaining flexibility. This means thinking not only about how something works right now but also how it will behave under different conditions or how it can be adapted in the future. Essentially, deep thinking in both realms is about moving beyond superficial understanding to grasp the intricate details and bigger picture simultaneously, enabling better decision-making and problem-solving.
+\lettrine{F}{ irst of all}, involves carefully examining ideas beyond their surface level by systematically analyzing relationships, causes, and implications. It requires going beyond just accepting information as it is, instead questioning assumptions and exploring multiple layers of reasoning to understand the underlying principles. This kind of thinking uses formal logical processes like deduction and induction to draw well-founded conclusions and often involves breaking down complex problems into smaller, more manageable parts to analyze them thoroughly. From a technological standpoint, deep thinking means understanding how different parts of a system interact and affect each other, rather than looking at components in isolation. It involves creating solutions that are efficient, scalable, and robust by anticipating potential problems and edge cases. Technological deep thinking also requires a mindset of careful design — building abstractions and modular structures that manage complexity while maintaining flexibility. This means thinking not only about how something works right now but also how it will behave under different conditions or how it can be adapted in the future. Essentially, deep thinking in both realms is about moving beyond superficial understanding to grasp the intricate details and bigger picture simultaneously, enabling better decision-making and problem-solving.
 
 \subsection{What makes this book so valuable}
-\lettrine{D}{eciphering} dead languages. Detecting malignant tumours. develop a skill that’s crucial but often overlooked: the ability to analyze complex problems thoughtfully and thoroughly. In today’s fast-paced world, many people tend to skim information or jump to quick conclusions, but deep thinking encourages slowing down, questioning assumptions, and understanding systems at a fundamental level. Such a book would provide practical frameworks and mental tools to approach challenges more effectively, whether in everyday life, science, engineering, or technology. It can also bridge the gap between abstract reasoning and real-world application, helping readers not just to think harder but to think smarter—anticipating problems, designing better solutions, and making decisions that stand the test of time. Ultimately, its value lies in empowering readers to cultivate clarity, insight, and creativity, which are essential for innovation and meaningful progress in any field.
+\lettrine{D}{ eciphering} dead languages. Detecting malignant tumours. develop a skill that’s crucial but often overlooked: the ability to analyze complex problems thoughtfully and thoroughly. In today’s fast-paced world, many people tend to skim information or jump to quick conclusions, but deep thinking encourages slowing down, questioning assumptions, and understanding systems at a fundamental level. Such a book would provide practical frameworks and mental tools to approach challenges more effectively, whether in everyday life, science, engineering, or technology. It can also bridge the gap between abstract reasoning and real-world application, helping readers not just to think harder but to think smarter—anticipating problems, designing better solutions, and making decisions that stand the test of time. Ultimately, its value lies in empowering readers to cultivate clarity, insight, and creativity, which are essential for innovation and meaningful progress in any field.
 
 % === CHAPTER 2 ===
 \chapter{Deep Learning Basics}
 
 \section{What is a Neural Network?}
-\lettrine{A}{rtificial} type of computational model inspired by the way biological brains work, designed to recognize patterns and solve complex problems by learning from data. At its core, a neural network is composed of many interconnected units called neurons or nodes, arranged in layers. These layers typically include an input layer, one or more hidden layers, and an output layer.
+\lettrine{A}{ rtificial} type of computational model inspired by the way biological brains work, designed to recognize patterns and solve complex problems by learning from data. At its core, a neural network is composed of many interconnected units called neurons or nodes, arranged in layers. These layers typically include an input layer, one or more hidden layers, and an output layer.
 Each neuron receives input signals (which are usually numbers) from neurons in the previous layer, processes them by applying a weighted sum followed by a non-linear function called an activation function, and then passes the result to neurons in the next layer. The weights represent the strength or importance of the connections, and the activation function introduces non-linearity, enabling the network to model complex relationships rather than just linear ones.
 Training a neural network involves adjusting these weights so that the network’s output matches the desired output as closely as possible. This is done through a process called backpropagation combined with an optimization algorithm like gradient descent. Backpropagation works by calculating the error between the predicted output and the actual output, then propagating this error backward through the network to update the weights in a way that reduces the error over time.
 Neural networks are particularly powerful because they can automatically learn representations from raw data without needing explicit feature engineering. For example, in image recognition, early layers might detect simple features like edges, while deeper layers identify more complex shapes or objects.
@@ -176,21 +219,116 @@ Overall, neural networks form the backbone of many modern AI applications, inclu
 
 \subsection{Perceptron}
 \lettrine{T}{ he} perceptron is a binary classifier. perceptron is one of the simplest types of artificial neural networks and actually a foundational building block for more complex neural networks. It was introduced in the 1950s by Frank Rosenblatt.
-
 A perceptron takes several input values, each multiplied by a weight that represents the importance of that input. Then, it sums all these weighted inputs and passes the result through an activation function, typically a step function that outputs either 0 or 1. This output represents the perceptron’s decision—like classifying data into one of two categories.
-
 Mathematically, if you think of inputs as a vector xx and weights as ww, the perceptron computes:
-
 $$ y = \text{activation}\left(\sum_{i=1}^n w_i x_i + b \right) $$
-
 where bb is a bias term that shifts the decision boundary.
-
 The perceptron learns by adjusting the weights based on errors between its predicted output and the actual target during training, using a simple update rule. While a single perceptron can only solve linearly separable problems (where a straight line can separate classes), stacking perceptrons and adding layers leads to more powerful models like multilayer neural networks that can learn complex patterns.
-
 In short, the perceptron is the building block for neural networks, helping machines make simple yes/no decisions and forming the basis for deep learning architectures.
 
-\section{Training Deep Networks}
+\section{Training the model}
+\noindent
+Training a model involves finding the right set of parameters (weights and biases) that minimize the error between the predicted output and the actual output. This process is essentially an optimization problem. The model "learns" by iteratively adjusting its parameters using algorithms like gradient descent. Over time, these adjustments improve the model's accuracy.
+\begin{center}
+\begin{tikzpicture}[
+  neuron/.style={circle, draw=deepred, fill=deepred!10, minimum size=1cm},
+  layer/.style={draw=none, font=\bfseries},
+  connection/.style={->, thick, >=Stealth, draw=deepred},
+  node distance=1cm and 1.5cm
+]
+  % Layers
+  \node[layer] at (0,3.5) {Input Layer};
+  \node[layer] at (4,3.5) {Hidden Layer};
+  \node[layer] at (8,3.5) {Output Layer};
+
+  % Input neurons
+  \foreach \i in {1,2,3} {
+    \node[neuron] (i\i) at (0,2-\i) {};
+  }
+
+  % Hidden neurons
+  \foreach \j in {1,2} {
+    \node[neuron] (h\j) at (4,1.5-\j) {};
+  }
+
+  % Output neuron
+  \node[neuron] (o1) at (8,-0.5) {};
+
+  % Connections: Input -> Hidden
+  \foreach \i in {1,2,3} {
+    \foreach \j in {1,2} {
+      \draw[connection] (i\i) -- (h\j);
+    }
+  }
+
+  % Connections: Hidden -> Output
+  \foreach \j in {1,2} {
+    \draw[connection] (h\j) -- (o1);
+  }
+\end{tikzpicture}
+
+\vspace{0.5em}
+\textit{Figure: A basic neural network during training. Weights are updated to reduce prediction error.}
+\end{center}
+
 \subsection{Backpropagation}
+\vspace{0.5em}
+\noindent
+To understand how errors propagate backward through layers, consider the basic gradient descent update rule:
+\begin{equation}
+  w := w - \eta \frac{\partial L}{\partial w}
+\end{equation}
+
+\noindent
+Where:
+\begin{itemize}
+  \item \textit{\( w \)} is a weight parameter,
+  \item \textit{\( \eta \)} is the learning rate,
+  \item \textit{\( \frac{\partial L}{\partial w} \)} is the partial derivative of the loss function with respect to the weight.
+\end{itemize}
+
+\vspace{0.4em}
+\begin{center}
+  \begin{tikzpicture}[
+    block/.style={
+      rectangle,
+      draw=deepred,
+      thick,
+      fill=deepred!10,
+      minimum width=2.2cm,
+      minimum height=1cm,
+      align=center
+    },
+    arrow/.style={->, thick, >=Stealth, draw=deepred},
+    node distance=1.2cm
+  ]
+    \node[block] (loss) {Loss \\ \( L(y, \hat{y}) \)};
+    \node[block, below=of loss] (output) {Output Neuron};
+    \node[block, below=of output] (hidden) {Hidden Neuron};
+    \node[block, below=of hidden] (input) {Input Neuron};
+
+    \draw[arrow] (loss) -- node[right] {Gradient} (output);
+    \draw[arrow] (output) -- (hidden);
+    \draw[arrow] (hidden) -- (input);
+  \end{tikzpicture}
+
+  \vspace{0.4em}
+  \textit{Figure: Backpropagation through layers using gradient descent.}
+\end{center}
+
+\vspace{0.3em}
+\noindent
+Backpropagation efficiently applies the chain rule:
+\begin{equation}
+  \frac{\partial L}{\partial w} =
+  \frac{\partial L}{\partial y} \cdot
+  \frac{\partial y}{\partial z} \cdot
+  \frac{\partial z}{\partial w}
+\end{equation}
+
+\noindent
+Each term in this chain corresponds to a different layer in the network, enabling us to compute how much each weight contributes to the overall loss.
+
 \lettrine{B}{ ackpropagation} is an essential technique. fundamental algorithm in AI and deep learning that enables neural networks to learn from data by adjusting their internal parameters—called weights—in order to improve performance on a given task. When a neural network processes an input, it produces an output, which is then compared to the expected or correct result using a loss function—a measure of how far off the prediction is. The goal of training is to minimize this loss.
 Backpropagation works by computing the gradient, or the rate of change, of the loss function with respect to each weight in the network. This gradient tells us how much a small change in a particular weight will affect the overall error. The algorithm uses the chain rule from calculus to efficiently calculate these gradients layer by layer, starting from the output layer and moving backward toward the input layer—hence the name “backpropagation.”
 Once the gradients are computed, they guide how the weights should be adjusted. Using an optimization method like gradient descent, the network updates its weights in the direction that most reduces the loss. This process repeats over many iterations (epochs), gradually improving the network’s accuracy in making predictions.
