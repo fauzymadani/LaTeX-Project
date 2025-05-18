@@ -1,4 +1,4 @@
-# My Firt LaTeX Project
+# First LaTeX Project
 This is my first LaTeX project for the learning proccess.
 what i learn:
 - Tikz
