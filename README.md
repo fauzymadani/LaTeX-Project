@@ -68,3 +68,7 @@ This project is for personal learning purposes only and is not licensed for redi
 ## Author
 Created by [Fauzy](http://fauzy.lovestoblog.com) as part of a self-guided LaTeX learning journey.
 
+## Reference
+- [Deep Learning Interviews: Hundreds of fully solved job interview questions from a wide range of key topics in AI](https://arxiv.org/abs/2201.00650)
+- [HTN Plan Repair Algorithms Compared: Strengths and Weaknesses of Different Methods](https://arxiv.org/pdf/2504.16209)
+- [Neural Thermodynamic Laws for Large Language Model Training](https://arxiv.org/pdf/2505.10559)
