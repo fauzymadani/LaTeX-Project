@@ -3,7 +3,11 @@
 % ======== Packages ========
 \usepackage[a4paper, top=2cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{titlesec}
+\usepackage{fancyhdr}
 \usepackage{amsmath}
+\usepackage{graphicx} % buat gambar
+\usepackage{pagecolor} % buat warna background
+\usepackage{multicol}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{tikz}
@@ -61,6 +65,15 @@
 \patchcmd{\@makechapterhead}{\vspace*{50\p@}}{\vspace*{10pt}}{}{}
 \makeatother
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot[L]{\small\textit{Deep Thinking, made with \LaTeX{}}}
+\fancyfoot[R]{\small Fauzy, This book only for learning purpose only \textbar\ 2025}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrulewidth}{0pt}
+
+
 % ======== Chapter style ========
 \titleformat{\chapter}[display]
   {\normalfont\Large\bfseries}
@@ -106,15 +119,7 @@
 \vfill
 {\Large SMK Negeri 1 Garut \\ \texttt{fauzy\_madani@smknegeri1garut.sch.id}}
 \vspace*{2cm}
-
-\begin{tikzpicture}
-  \draw[deepred, very thick] (0,0) rectangle (12,16);
-  \node[anchor=south west, inner sep=0] (coverimg) at (0,0)
-    {\includegraphics[width=12cm,height=16cm]{example-image}};
-  \fill[white,opacity=0.8] (0,0) rectangle (12,16);
-\end{tikzpicture}
 \end{titlepage}
-\clearpage
 
 % === Author Page ===
 \chapter*{About the Author}
@@ -175,17 +180,18 @@ His long-term goal is to become a Debian package maintainer and contribute to re
 
 \clearpage
 
-% === Continue with Table of Contents and next chapter ===
-\tableofcontents
-\clearpage
-
-\chapter{How to Use This Book}
 % === Table of Contents ===
+% === CHAPTER 1 ===
 \tableofcontents
 \clearpage
 
-% === CHAPTER 1 ===
 \chapter{How to Use This Book}
+
+\noindent
+\textbf{Preface:}  
+Welcome! Whether you are a beginner eager to learn or an experienced reader looking to deepen your understanding, this book is built to adapt to your pace. Each chapter stands on its own yet connects to a bigger picture—encouraging exploration and discovery rather than a strict linear path.  
+Use the table of contents to navigate, skip ahead, or revisit concepts anytime you want. Don't worry about reading every page front to back. Instead, dive into topics that spark your curiosity, experiment with the exercises, and reflect on the ideas presented.  
+This approach will help you develop a thoughtful, flexible mindset that’s essential for tackling complex problems in technology, science, or any field where deep understanding matters.
 
 % Illustration
 \begin{center}
@@ -201,10 +207,13 @@ His long-term goal is to become a Debian package maintainer and contribute to re
 \end{center}
 
 \section{Introduction}
-\lettrine{F}{ irst of all}, involves carefully examining ideas beyond their surface level by systematically analyzing relationships, causes, and implications. It requires going beyond just accepting information as it is, instead questioning assumptions and exploring multiple layers of reasoning to understand the underlying principles. This kind of thinking uses formal logical processes like deduction and induction to draw well-founded conclusions and often involves breaking down complex problems into smaller, more manageable parts to analyze them thoroughly. From a technological standpoint, deep thinking means understanding how different parts of a system interact and affect each other, rather than looking at components in isolation. It involves creating solutions that are efficient, scalable, and robust by anticipating potential problems and edge cases. Technological deep thinking also requires a mindset of careful design — building abstractions and modular structures that manage complexity while maintaining flexibility. This means thinking not only about how something works right now but also how it will behave under different conditions or how it can be adapted in the future. Essentially, deep thinking in both realms is about moving beyond superficial understanding to grasp the intricate details and bigger picture simultaneously, enabling better decision-making and problem-solving.
+\lettrine{T}{ he} field of neural networks represents a fundamental cornerstone of modern artificial intelligence. At its core, a neural network functions as a system that transforms input data into meaningful output through layers of interconnected nodes, mimicking certain aspects of human brain processing. This transformative process enables machines to learn patterns, recognize complex structures, and make informed decisions across a wide range of applications.
+In this book, we explore the principles, architectures, and techniques that underlie neural networks and their broader implications in machine learning. Beyond the technical details, we emphasize a mindset of thoughtful analysis and deliberate problem-solving—key skills necessary to navigate the evolving landscape of AI and data science.
 
 \subsection{What makes this book so valuable}
 \lettrine{D}{ eciphering} dead languages. Detecting malignant tumours. develop a skill that’s crucial but often overlooked: the ability to analyze complex problems thoughtfully and thoroughly. In today’s fast-paced world, many people tend to skim information or jump to quick conclusions, but deep thinking encourages slowing down, questioning assumptions, and understanding systems at a fundamental level. Such a book would provide practical frameworks and mental tools to approach challenges more effectively, whether in everyday life, science, engineering, or technology. It can also bridge the gap between abstract reasoning and real-world application, helping readers not just to think harder but to think smarter—anticipating problems, designing better solutions, and making decisions that stand the test of time. Ultimately, its value lies in empowering readers to cultivate clarity, insight, and creativity, which are essential for innovation and meaningful progress in any field.
+in an age where information flows rapidly and superficially, the ability to think deeply and critically is more important than ever. This book aims to cultivate that skill by providing readers with practical frameworks to approach complex problems with clarity and rigor. Whether you are decoding ancient languages, diagnosing medical conditions, or building intelligent systems, the methods discussed here foster a thorough understanding of underlying processes and encourage innovative solutions.
+By bridging theoretical concepts with real-world applications, this work empowers readers to think not only harder but smarter—anticipating challenges, crafting robust designs, and making decisions grounded in insight and foresight. Ultimately, the goal is to nurture creativity and precision, equipping you with the tools needed for meaningful progress in any technical or scientific endeavor.
 
 % === CHAPTER 2 ===
 \chapter{Deep Learning Basics}
@@ -382,27 +391,271 @@ class Net(nn.Module):
 \end{lstlisting}
 
 % === CHAPTER 3 ===
+% === CHAPTER 3 ===
 \chapter{Advanced Topics}
 
-\section{GANs and VAEs}
-\lettrine{G}{ enerative} models like GANs are powerful. Generative Adversarial Networks (GANs) are a class of neural networks designed to generate new, realistic data samples that resemble a given dataset. A GAN consists of two neural networks working in opposition—a generator and a discriminator. The generator creates fake data (like images, text, or audio) from random noise, trying to mimic the real data distribution. The discriminator’s job is to distinguish between real data (from the training set) and fake data produced by the generator. During training, these two networks play a kind of game: the generator tries to fool the discriminator by producing increasingly convincing fake samples, while the discriminator gets better at spotting fakes. Through this adversarial process, both networks improve over time. The end result is a generator that can produce highly realistic data. GANs have been widely used for tasks like image synthesis, style transfer, and even creating deepfake videos.
-while Variational Autoencoders (VAEs), on the other hand, are a different kind of generative model that learns to encode input data into a compressed, continuous latent space and then decode it back to reconstruct the original input. Unlike traditional autoencoders, VAEs learn a probability distribution over the latent space rather than fixed points. This allows VAEs to generate new data by sampling from the latent space and decoding it. The key idea behind VAEs is to balance two objectives during training: minimizing the reconstruction error (how close the decoded output is to the original input) and ensuring the latent space follows a known distribution (usually a Gaussian). This makes the latent space smooth and continuous, which helps generate coherent new samples by interpolation. VAEs are often used in tasks such as image generation, anomaly detection, and representation learning. In summary, both GANs and VAEs are powerful generative models but work quite differently: GANs use a competitive training setup between two networks to produce realistic samples, while VAEs use probabilistic encoding and decoding to learn a meaningful latent representation that can be sampled for new data. Each has its own strengths and applications depending on the problem you want to solve.
+\section{Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs)}
+
+\lettrine{G}{enerative} models have revolutionized how machines can create data resembling real-world distributions. Two of the most influential models in this domain are Generative Adversarial Networks (GANs) and Variational Autoencoders (VAEs), each with a unique approach to data generation.
+
+\vspace{0.5cm}
+% Simple GAN architecture illustration
+\begin{center}
+\begin{tikzpicture}[thick, every node/.style={font=\small}]
+  % Nodes
+  \node (noise) at (0,0) {Random Noise \( z \sim p_z(z) \)};
+  \node[draw, circle, fill=blue!20, minimum size=1.2cm] (gen) at (4,0) {Generator \( G \)};
+  \node[draw, circle, fill=red!20, minimum size=1.2cm] (disc) at (8,0) {Discriminator \( D \)};
+  \node (realfake) at (12,0) {Real/Fake Decision};
+
+  % Arrows
+  \draw[->] (noise) -- (gen);
+  \draw[->] (gen) -- (disc) node[midway, above] {Fake Data \( G(z) \)};
+  \draw[->] (disc) -- (realfake);
+
+  % Real data arrow
+  \node (real) at (8,-2) {Real Data \( x \sim p_{data}(x) \)};
+  \draw[->] (real) -- (disc);
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.5cm}
+GANs consist of two neural networks — a Generator \(G\) that synthesizes data from random noise \(z\), and a Discriminator \(D\) that evaluates whether the data is real or fake. Both networks engage in a minimax game defined by the value function:
+
+\[
+\min_G \max_D V(D, G) = \mathbb{E}_{x \sim p_{data}(x)}[\log D(x)] + \mathbb{E}_{z \sim p_z(z)}[\log(1 - D(G(z)))]
+\]
+
+where \(p_{data}\) is the true data distribution, and \(p_z\) is the noise prior.
+
+\vspace{0.5cm}
+In contrast, VAEs approach generative modeling by learning a probabilistic mapping between data and a latent space. VAEs optimize the evidence lower bound (ELBO):
+
+\[
+\mathcal{L}(\theta, \phi; x) = \mathbb{E}_{q_\phi(z|x)}[\log p_\theta(x|z)] - D_{KL}(q_\phi(z|x) \| p(z))
+\]
+
+where \(q_\phi(z|x)\) is the encoder’s approximate posterior, \(p_\theta(x|z)\) is the decoder likelihood, and \(D_{KL}\) is the Kullback-Leibler divergence ensuring the latent distribution stays close to prior \(p(z)\), typically Gaussian.
+
+\vspace{0.5cm}
+% VAE graphical illustration
+\begin{center}
+\begin{tikzpicture}[thick, every node/.style={font=\footnotesize}]  % font sedikit lebih kecil
+  % Nodes
+  \node (input) at (0,0) {Input Data \( x \)};
+  \node[draw, rectangle, fill=green!20, minimum width=1.5cm, minimum height=0.8cm] (encoder) at (3,0) {Encoder \( q_\phi(z|x) \)};
+  \node[draw, ellipse, fill=yellow!30, minimum width=1.2cm, minimum height=0.8cm] (latent) at (6,0) {Latent \( z \)};
+  \node[draw, rectangle, fill=green!20, minimum width=1.5cm, minimum height=0.8cm] (decoder) at (9,0) {Decoder \( p_\theta(x|z) \)};
+  \node (recon) at (12,0) {Reconstruction \( \hat{x} \)};
+
+  % Arrows
+  \draw[->] (input) -- (encoder);
+  \draw[->] (encoder) -- (latent);
+  \draw[->] (latent) -- (decoder);
+  \draw[->] (decoder) -- (recon);
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.5cm}
+Both GANs and VAEs have proven to be powerful generative models with complementary strengths: GANs excel at producing sharp, realistic samples by learning through adversarial competition, whereas VAEs provide a principled probabilistic framework allowing smooth latent space interpolation and meaningful data representations.
+
+\vspace{0.3cm}
+Understanding these models opens pathways to advanced applications including image synthesis, anomaly detection, data augmentation, and creative AI.
 
 % === CHAPTER 4 ===
 \chapter{Interview Questions}
 
 \section{Theory}
-\lettrine{T}{ his} section covers theoretical concept. deep learning models combines ideas from mathematics and computer science: neural networks approximate complex functions by layering simple mathematical operations, and backpropagation uses calculus to efficiently adjust the network’s parameters to reduce errors. GANs rely on game theory, where two networks compete to generate realistic data by learning the true data distribution, while VAEs use principles from probability and Bayesian inference to learn compact, meaningful representations of data and generate new samples by balancing reconstruction accuracy with keeping the underlying data structure organized. Together, these theories enable machines to learn from data, recognize patterns, and create new content in powerful and flexible ways.
+\lettrine{T}{heory} questions in interviews often test your understanding of key deep learning concepts:
+
+\begin{itemize}
+  \item \textbf{Backpropagation}: uses chain rule to compute gradients.
+  \item \textbf{Activation Functions}: like ReLU and sigmoid help networks learn non-linear patterns.
+  \item \textbf{GANs}: involve two networks (generator and discriminator) competing in a minimax game.
+  \item \textbf{VAEs}: combine autoencoders with probabilistic inference.
+\end{itemize}
+
+deep learning models combines ideas from mathematics and computer science: neural networks approximate complex functions by layering simple mathematical operations, and backpropagation uses calculus to efficiently adjust the network’s parameters to reduce errors. GANs rely on game theory, where two networks compete to generate realistic data by learning the true data distribution, while VAEs use principles from probability and Bayesian inference to learn compact, meaningful representations of data and generate new samples by balancing reconstruction accuracy with keeping the underlying data structure organized. Together, these theories enable machines to learn from data, recognize patterns, and create new content in powerful and flexible ways.
+
+\vspace{0.3cm}
+\noindent\textbf{Backprop Formula}:
+\[
+\frac{\partial \mathcal{L}}{\partial w} = \frac{\partial \mathcal{L}}{\partial a} \cdot \frac{\partial a}{\partial z} \cdot \frac{\partial z}{\partial w}
+\]
+
+\vspace{0.4cm}
+\begin{center}
+\begin{tikzpicture}[node distance=1.5cm, thick, every node/.style={font=\small}]
+  \node (x) [draw, circle, fill=blue!20] {\(x\)};
+  \node (h) [right of=x, draw, circle, fill=orange!30] {\(h\)};
+  \node (y) [right of=h, draw, circle, fill=green!20] {\(y\)};
+  \draw[->] (x) -- (h) node[midway, above] {\(w_1\)};
+  \draw[->] (h) -- (y) node[midway, above] {\(w_2\)};
+\end{tikzpicture}
+
+\smallskip
+\textit{Simple neural network: input–hidden–output}
+\end{center}
+
+---
 
 \section{Coding}
-\lettrine{I}{ nterviewers} often ask you to write code. t’s their goal is to assess more than just whether you
+
+\lettrine{I}{nterviewers} often ask you to write code. t’s their goal is to assess more than just whether you
 can produce a working program. They want to see your problem-solving process, logical thinking,
 and how you approach complex challenges step-by-step—which is essentially a form of deep thinking
 applied in a practical context. Writing code live reveals how you break down problems, choose the right
 algorithms or data structures, and handle edge cases or errors. It also shows your ability to communicate
 your reasoning clearly and adapt when faced with unfamiliar scenarios. So, the coding task isn’t just
 about getting the right answer; it’s about demonstrating your mindset, technical skills, and capacity to
-think deeply and logically under pressure, which are critical traits for real-world software development.
+think deeply and logically under pressure, which are critical traits for real-world software development. 
+test your logic and clarity when coding. Focus on correctness and clean thinking.
+
+\vspace{0.4cm}
+\noindent\textbf{Example: Reverse a String in Python}
+\begin{verbatim}
+def reverse_string(s):
+    return s[::-1]
+\end{verbatim}
+
+\vspace{0.4cm}
+\noindent\textbf{Tips:}
+\begin{itemize}
+  \item Think aloud while coding.
+  \item Handle edge cases (empty input, null values).
+  \item Use clear variable names and structure.
+\end{itemize}
+
+---
+
+\chapter{Conclusion}
+\begin{multicols}{2}
+
+\section*{Overview}
+\addcontentsline{toc}{section}{Overview}
+\lettrine{T}{ his} book has explored a wide range of concepts in deep learning, from foundational theories to advanced architectures such as GANs and VAEs. Through theoretical explanation, visual illustrations, and code-driven insights, we have aimed to provide not just knowledge—but understanding. As the field of artificial intelligence continues to evolve rapidly, having a strong conceptual grasp is more valuable than ever before.
+
+\section*{Key Takeaways}
+\addcontentsline{toc}{section}{Key Takeaways}
+\begin{itemize}
+  \item Deep learning models approximate complex functions via layered transformations.
+  \item GANs rely on adversarial training while VAEs use probabilistic modeling.
+  \item Mathematical foundations like linear algebra, probability, and calculus are essential.
+  \item Real-world applications require both theoretical understanding and coding fluency.
+  \item Thinking deeply—not just quickly—results in better solutions and more robust systems.
+\end{itemize}
+
+\section*{Reflection on Deep Thinking}
+\addcontentsline{toc}{section}{Reflection on Deep Thinking}
+Deep thinking is not about overcomplicating ideas. It’s about stripping concepts down to their essence and building back up with clarity and intent. Throughout this book, we’ve highlighted the importance of pausing to truly understand: Why does a model work? What assumptions are baked into our algorithms? How can we design systems that are both intelligent and interpretable?
+
+This reflection is not just academic—it’s practical. Engineers who deeply understand their tools are better equipped to improve them, debug them, and innovate beyond them.
+
+\section*{Future Outlook}
+\addcontentsline{toc}{section}{Future Outlook}
+Artificial Intelligence is progressing at an exponential rate. In the coming years, we’ll likely see breakthroughs in:
+
+\begin{itemize}
+  \item Self-supervised and few-shot learning
+  \item Explainable AI (XAI) and ethical frameworks
+  \item Fusion between symbolic reasoning and deep neural architectures
+  \item Lightweight and edge-deployable neural models
+\end{itemize}
+
+To prepare for these developments, it is crucial to remain both curious and rigorous. The mindset cultivated in this book—an analytical, structured, and reflective way of thinking—will serve as your strongest asset.
+
+\section*{Final Words}
+\addcontentsline{toc}{section}{Final Words}
+Whether you are a student, researcher, engineer, or just an enthusiast, remember that deep learning is not only about machines learning from data—it’s also about humans learning from thinking. May your journey ahead be filled with discovery, creativity, and meaningful progress.
+
+\end{multicols}
+
+\cleardoublepage
+\thispagestyle{empty}
+\begin{center}
+\vspace*{4cm}
+
+{\Huge \bfseries Thank You for Reading}
+
+\vspace{1.5cm}
+
+{\Large Deep thinking is a skill, not just a mindset.}
+
+\vspace{1.5cm}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+
+  % Frame
+  \draw[line width=0.8pt, color=gray!60] (-6,0) rectangle (6,8);
+
+  % Top curve
+  \draw[line width=1pt, color=gray] (-6,8) arc[start angle=180,end angle=360,radius=6];
+
+  % Bottom curve (mirrored)
+  \draw[line width=1pt, color=gray] (6,0) arc[start angle=0,end angle=180,radius=6];
+
+  % Decorative lines
+  \foreach \y in {1.5,3,...,6.5}
+    \draw[line width=0.2pt, color=gray!40] (-5.5,\y) -- (5.5,\y);
+
+  % Main Title
+  \node at (0,7.2) {\Huge\bfseries Thank You};
+
+  % Message
+  \node[align=center, text width=10cm] at (0,4.2) {\itshape
+    In the spirit of discovery and dedication,\\[0.5em]
+    I express my sincere gratitude to everyone who contributed to this journey.\\[1em]
+    Every idea written here was nurtured by the silent encouragement of countless sources, mentors, and friends.\\[1em]
+    Thank you for being a part of this story.
+  };
+
+  % Footer
+  \node[align=center] at (0,1) {\small\itshape
+    --- A Journey Through Code, Curiosity, and Creation ---};
+
+\end{tikzpicture}
+\end{center}
+
+\vfill
+
+{\large\itshape
+May this book ignite not only your knowledge, but your curiosity.\\
+Stay sharp. Keep building. Keep thinking deeply.
+}
+
+\vspace{3cm}
+
+{\Large \textcopyright{} \the\year{} \ Fauzy Madani}
+
+\end{center}
+
+\cleardoublepage
+\thispagestyle{empty}
+
+\vspace*{3cm}
+\begin{center}
+    {\Huge\bfseries Acknowledgments}
+\end{center}
+
+\vspace{1cm}
+
+\begin{multicols}{2}
+\lettrine[lines=3,lhang=0.2,lraise=0.1]{T}{ hank} you for taking the time to read this work. This book was created primarily as a personal learning journey to master the art of \LaTeX\ and deepen my understanding of advanced topics in machine learning. 
+
+The path of learning is endless, and I hope this effort not only strengthens my own skills but also inspires others who are passionate about technical writing and scientific exploration. 
+
+Each page here is a step towards clarity, precision, and creativity — qualities essential both in academia and professional life. Like the intricate tales woven in classic literature, such as those found in the world of Harry Potter, knowledge too is a magic waiting to be discovered and shared.
+
+By blending formality with imagination, this work strives to balance the rigor of scientific papers and the timeless charm of storytelling. I appreciate your interest and encourage you to keep questioning, experimenting, and creating.
+
+May your own learning journey be as rewarding and magical as the worlds we build with words and equations.
+\end{multicols}
+
+\vspace{2cm}
+\begin{center}
+        \textit{— Fauzy, made with \LaTeX{}}
+\end{center}
 
 \end{document}
 
